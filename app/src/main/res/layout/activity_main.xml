@@ -1,12 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Main screen - portrait orientation (see Figure 3 of the specification).
+
+    The screen is split into two equal halves with layout_weight:
+      * top half    - banner ImageView with the welcome message on top of it,
+      * bottom half - a green panel holding a 2x2 grid of topic buttons.
+
+    No hard-coded widths/heights are used anywhere, so the layout adapts to
+    phones and tablets of any size.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <!-- ==================== TOP HALF: BANNER ==================== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imageViewBanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/banner_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
+
+        <!-- Banner title: the only text size allowed to be hard-coded (40sp) -->
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/spacing_medium"
+            android:text="@string/welcome_message"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <!-- ================= BOTTOM HALF: GREEN PANEL ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <!-- Row 1: Facilities | Events -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_small">
+
+                <ImageButton
+                    android:id="@+id/imageButtonFacilities"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/facilities"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_btn_facilities" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facilities"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/button_label_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_small">
+
+                <ImageButton
+                    android:id="@+id/imageButtonEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/events"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_btn_events" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/events"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/button_label_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: Clubs | Support -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_small">
+
+                <ImageButton
+                    android:id="@+id/imageButtonClubs"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/clubs"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_btn_clubs" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clubs"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/button_label_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_small">
+
+                <ImageButton
+                    android:id="@+id/imageButtonSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/support"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_btn_support" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/support"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/button_label_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
