@@ -1,0 +1,13 @@
+# IntelliJ / Android Studio files that should never be committed
+*.iml
+.gradle/
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Machine specific SDK location
+local.properties

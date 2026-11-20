@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.campuslife'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.campuslife"
+        minSdk 24          // Android 7.0 (Nougat) - required by the assignment
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // AppCompatActivity / AppCompat theme support.
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}
