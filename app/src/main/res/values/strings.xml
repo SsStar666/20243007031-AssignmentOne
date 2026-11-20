@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Application / launcher name -->
     <string name="app_name">CampusLife</string>
+
+    <!-- Banner text on the main screen -->
     <string name="welcome_message">Welcome to CampusLife - Your Pocket Guide to University of Waikato</string>
+
+    <!-- Accessibility descriptions -->
     <string name="banner_content_description">University of Waikato campus</string>
     <string name="logo_content_description">CampusLife logo</string>
     <string name="topic_icon_content_description">Topic icon</string>
+
+    <!-- Labels of the four student service areas (also used on the detail screen) -->
     <string name="facilities">Facilities</string>
     <string name="events">Events</string>
     <string name="clubs">Clubs</string>
     <string name="support">Support</string>
+
+    <!-- Toast message shown when one of the four buttons is tapped -->
     <string name="toast_topic_clicked">%1$s clicked</string>
-    <string name="detail_placeholder_title">This is a title</string>
-    <string name="detail_placeholder_content">This is content</string>
+
+    <!-- Short names used as the detail screen header, in the same order as
+         the topic arrays in arrays.xml. Kept as an array so that no if/switch
+         statement is needed in the Java code. -->
+    <string-array name="topic_labels">
+        <item>Facilities</item>
+        <item>Events</item>
+        <item>Clubs</item>
+        <item>Support</item>
+    </string-array>
 </resources>
