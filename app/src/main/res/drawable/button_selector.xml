@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Button background selector used by the four ImageButtons.
+    Green when the button is in its normal state, light green while pressed
+    (Part C, step 4 of the assignment).
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@color/light_green" />
+    <item android:drawable="@color/green" />
+</selector>

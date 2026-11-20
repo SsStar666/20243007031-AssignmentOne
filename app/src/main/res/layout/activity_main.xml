@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@android:color/white"
+        android:background="@color/green"
         android:orientation="vertical">
 
         <!-- Row 1: Facilities | Events -->
@@ -72,8 +72,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/card_background"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="@string/facilities"
+                    android:onClick="onFacilitiesClicked"
                     android:scaleType="fitCenter"
                     android:src="@drawable/img_btn_facilities" />
 
@@ -81,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/facilities"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
                     android:textSize="@dimen/button_label_text_size" />
             </LinearLayout>
 
@@ -98,8 +99,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/card_background"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="@string/events"
+                    android:onClick="onEventsClicked"
                     android:scaleType="fitCenter"
                     android:src="@drawable/img_btn_events" />
 
@@ -107,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/events"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
                     android:textSize="@dimen/button_label_text_size" />
             </LinearLayout>
         </LinearLayout>
@@ -132,8 +134,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/card_background"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="@string/clubs"
+                    android:onClick="onClubsClicked"
                     android:scaleType="fitCenter"
                     android:src="@drawable/img_btn_clubs" />
 
@@ -141,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/clubs"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
                     android:textSize="@dimen/button_label_text_size" />
             </LinearLayout>
 
@@ -158,8 +161,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="@color/card_background"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="@string/support"
+                    android:onClick="onSupportClicked"
                     android:scaleType="fitCenter"
                     android:src="@drawable/img_btn_support" />
 
@@ -167,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/support"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/white"
                     android:textSize="@dimen/button_label_text_size" />
             </LinearLayout>
         </LinearLayout>

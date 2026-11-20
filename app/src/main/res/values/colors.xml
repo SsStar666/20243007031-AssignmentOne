@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Temporary card colour used until the brand colours are added in Part C -->
-    <color name="card_background">#EEEEEE</color>
+    <!-- Brand colours taken from the assignment specification -->
+    <color name="green">#1B5E20</color>
+    <color name="light_green">#66BB6A</color>
+
+    <!-- Neutral colours used by the detail screen -->
+    <color name="content_background">#FCF7FF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#4A4A4A</color>
+
+    <!-- Adaptive launcher icon background -->
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>
