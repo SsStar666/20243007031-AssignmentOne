@@ -10,4 +10,6 @@
     <string name="clubs">Clubs</string>
     <string name="support">Support</string>
     <string name="toast_topic_clicked">%1$s clicked</string>
+    <string name="detail_placeholder_title">This is a title</string>
+    <string name="detail_placeholder_content">This is content</string>
 </resources>

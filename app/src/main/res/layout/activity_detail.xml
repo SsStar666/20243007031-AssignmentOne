@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Detail screen (see Figures 5 to 9 of the specification).
+
+    Structure:
+      * header - the same banner image with the topic icon on the left and the
+        short topic name (Facilities / Events / Clubs / Support) on the right,
+      * body   - a scrollable card that is populated at runtime from arrays.xml.
+
+    All sizes are expressed with layout weights or with values from
+    dimens.xml, so the layout stays responsive in both orientations.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_background"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <!-- ==================== HEADER ==================== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <ImageView
+            android:id="@+id/imageViewDetailBanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/banner_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Topic icon, set from the image name stored in arrays.xml -->
+            <ImageView
+                android:id="@+id/imageViewDetailIcon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/topic_icon_content_description"
+                android:scaleType="fitCenter"
+                tools:src="@drawable/img_btn_facilities" />
+
+            <!-- Short topic name, e.g. "Facilities" -->
+            <TextView
+                android:id="@+id/textViewDetailHeader"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/detail_header_text_size"
+                tools:text="Facilities" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- ==================== BODY ==================== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <!-- Full title of the topic, e.g. "Hamilton & Tauranga Facilities" -->
+            <TextView
+                android:id="@+id/textViewDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/spacing_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/detail_title_text_size"
+                android:textStyle="bold"
+                tools:text="Hamilton &amp; Tauranga Facilities" />
+
+            <!-- Content text, filled from the string_array_content array -->
+            <TextView
+                android:id="@+id/textViewDetailContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/detail_content_line_spacing"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/detail_content_text_size"
+                tools:text="This is content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

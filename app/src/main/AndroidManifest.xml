@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Application manifest.
+    The app is a single launcher activity (MainActivity) plus a secondary
+    activity (DetailActivity) that is started with an explicit Intent.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -9,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CampusLife">
 
+        <!-- Main screen: banner + four topic buttons -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -17,6 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Detail screen: shows the content of the topic that was clicked.
+             Not exported because it is only opened from inside the app. -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

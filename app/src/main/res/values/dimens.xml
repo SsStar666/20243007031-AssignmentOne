@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Sizes are expressed in sp / dp here so that no layout file contains a
+         hard-coded dimension; every layout references these values instead. -->
+
+    <!-- Spacing -->
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
+    <!-- Main screen: label under each topic button -->
     <dimen name="button_label_text_size">18sp</dimen>
+
+    <!-- Detail screen: header label, title and body text -->
+    <dimen name="detail_header_text_size">28sp</dimen>
+    <dimen name="detail_title_text_size">20sp</dimen>
+    <dimen name="detail_content_text_size">16sp</dimen>
+    <dimen name="detail_content_line_spacing">4dp</dimen>
 </resources>
